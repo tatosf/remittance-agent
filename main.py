@@ -34,54 +34,71 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
-#this is an example menu and in this case I am using berkeley's caffe strada for testing
+# this is an example menu and in this case I am using berkeley's caffe strada for testing
 order = """
 Prompt
 """
 
+
 class UserQuery(BaseModel):
     question: str
 
+
 @app.post("/answer/")
 async def get_answer(query: UserQuery):
+    print("DEBUG: Entered get_answer with query:", query.question)
     try:
         classification = handler.classify_transaction(query.question)
+        print("DEBUG: Classification result:", classification)
     except Exception as e:
+        print("DEBUG: Exception during classification:", e)
         raise HTTPException(status_code=500, detail=str(e))
-    
+
     try:
-        # Unable to classify
         if classification == 0:
-            raise HTTPException(status_code=500, detail=str("Our backend was unable to classify your intent"))
-        # Classify as a transfer
+            print("DEBUG: Classification is 0, unable to classify intent.")
+            raise HTTPException(
+                status_code=500, detail="Our backend was unable to classify your intent"
+            )
         elif classification == 1:
+            print("DEBUG: Detected transfer intent.")
             response = transfer.convert_transfer_intent(query.question)
             query_type = "transfer"
-        # Classify as a swap
         elif classification == 2:
+            print("DEBUG: Detected swap intent.")
             response = swap.convert_transaction(query.question)
             query_type = "swap"
+        else:
+            print("DEBUG: Unexpected classification value:", classification)
+            raise HTTPException(
+                status_code=500, detail="Unexpected classification result"
+            )
+
+        print("DEBUG: Conversion response:", response)
     except Exception as e:
+        print("DEBUG: Exception during conversion:", e)
         raise HTTPException(status_code=500, detail=str(e))
-    
-    print(response)
-    return {"transaction_type":query_type, "response": response}
+
+    return {"transaction_type": query_type, "response": response}
+
 
 @app.post("/swap/")
 async def get_swap(query: UserQuery):
     try:
         response = swap.convert_transaction(query.question)
-        return {"transaction_type":"swap", response: response}
+        return {"transaction_type": "swap", response: response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/transfer/")
 async def get_transfer(query: UserQuery):
     try:
         response = transfer.convert_transfer_intent(query.question)
-        return {"transaction_type":"transfer", "response": response}
+        return {"transaction_type": "transfer", "response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/classify/")
 async def classify_query(query: UserQuery):
