@@ -74,7 +74,8 @@ transfer_token_contracts = standard_token_contracts | {
 # Swap testnet tokens are cowswap-specific
 swap_token_contracts = standard_token_contracts | {
     "sepolia": {
-        "$USDC": "0x94a9d9ac8a22534e3faca9f4e7f2e2cf85d5e4c8",
+        "$WETH": "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9",
+        "$USDC": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
         "$DAI": "0xB4F1737Af37711e9A5890D9510c9bB60e170CB0D",
         "$EURC": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
     }
