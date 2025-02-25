@@ -37,7 +37,7 @@ def convert_transaction(user_input):
     # System message explaining the task and giving hints for each schema
     system_message = {
         "role": "system",
-        "content": "Please analyze the following transaction text and fill out the JSON schema based on the provided details. All prices are assumed to be in USD."
+        "content": "Please analyze the following transaction text and fill out the JSON schema based on the provided details. All prices are assumed to be in USD.",
     }
 
     # Messages to set up Schema
@@ -74,8 +74,21 @@ def convert_transaction(user_input):
         print("Error in decoding JSON. Response may not be in correct format.")
         filled_schema = {}
 
-    print(filled_schema)
-    filled_schema["fromAsset"] = token_contracts[filled_schema["chain"]][filled_schema["fromAsset"]]
-    filled_schema["toAsset"] = token_contracts[filled_schema["chain"]][filled_schema["toAsset"]]
+    print("DEBUG: Filled schema from ChatGPT:", filled_schema)
+
+    filled_schema["fromAsset"] = token_contracts[filled_schema["chain"]][
+        filled_schema["fromAsset"]
+    ]
+    filled_schema["toAsset"] = token_contracts[filled_schema["chain"]][
+        filled_schema["toAsset"]
+    ]
+    print(
+        "DEBUG: Mapped token addresses:",
+        {
+            "chain": filled_schema["chain"],
+            "fromAsset": filled_schema["fromAsset"],
+            "toAsset": filled_schema["toAsset"],
+        },
+    )
 
     return filled_schema

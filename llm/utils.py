@@ -27,6 +27,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 def create_open_ai_client():
     if os.getenv("OPENAI_URL"):
         return OpenAI(
@@ -40,10 +41,12 @@ def create_open_ai_client():
     else:
         return OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+
 def load_schema(schema_path):
     """Load a JSON schema from a file."""
     with open(schema_path, "r") as file:
         return json.load(file)
+
 
 standard_token_contracts = {
     "base": {
@@ -71,10 +74,12 @@ transfer_token_contracts = standard_token_contracts | {
 # Swap testnet tokens are cowswap-specific
 swap_token_contracts = standard_token_contracts | {
     "sepolia": {
-        "$USDC": "0xbe72E441BF55620febc26715db68d3494213D8Cb",  # cowswap test USDC
-        "$DAI": "0xB4F1737Af37711e9A5890D9510c9bB60e170CB0D",  # cowswap test DAI
+        "$USDC": "0x94a9d9ac8a22534e3faca9f4e7f2e2cf85d5e4c8",
+        "$DAI": "0xB4F1737Af37711e9A5890D9510c9bB60e170CB0D",
+        "$EURC": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
     }
 }
+
 
 def get_token_contracts(transaction_type):
     if transaction_type == "transfer":

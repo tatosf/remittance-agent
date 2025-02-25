@@ -4,11 +4,11 @@
     "properties": {
       "fromAsset": {
         "type": "string",
-        "enum": ["$WETH", "$USDC", "$DAI"]
+        "enum": ["$WETH", "$USDC", "$DAI", "$EURC"]
       },
       "toAsset": {
         "type": "string",
-        "enum": ["$WETH", "$USDC", "$DAI"]
+        "enum": ["$WETH", "$USDC", "$DAI", "$EURC"]
       },
       "amount": {
         "type": "number"
