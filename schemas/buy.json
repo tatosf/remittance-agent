@@ -1,0 +1,26 @@
+{
+  "title": "Buy Crypto With Fiat",
+  "type": "object",
+  "properties": {
+    "cryptoAsset": {
+      "type": "string",
+      "enum": ["$USDC", "$WETH", "$DAI", "$EURC"],
+      "description": "The cryptocurrency to purchase with fiat."
+    },
+    "amount": {
+      "type": "number",
+      "description": "The amount of cryptocurrency to purchase in USD."
+    },
+    "chain": {
+      "type": "string",
+      "enum": ["sepolia", "mainnet", "base"],
+      "description": "The blockchain network where the purchased crypto will be delivered."
+    },
+    "paymentMethod": {
+      "type": "string",
+      "enum": ["bank_account", "credit_card", "debit_card"],
+      "description": "The payment method to use for the purchase."
+    }
+  },
+  "required": ["cryptoAsset", "amount", "chain", "paymentMethod"]
+} 

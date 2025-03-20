@@ -24,7 +24,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import BaseModel
 import json
-from llm import swap, handler, transfer
+from llm import swap, handler, transfer, buy
 
 app = FastAPI()
 app.add_middleware(
@@ -34,7 +34,7 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
-# this is an example menu and in this case I am using berkeley's caffe strada for testing
+
 order = """
 Prompt
 """
@@ -68,6 +68,10 @@ async def get_answer(query: UserQuery):
             print("DEBUG: Detected swap intent.")
             response = swap.convert_transaction(query.question)
             query_type = "swap"
+        elif classification == 3:
+            print("DEBUG: Detected buy intent.")
+            response = buy.convert_buy_intent(query.question)
+            query_type = "buy"
         else:
             print("DEBUG: Unexpected classification value:", classification)
             raise HTTPException(
@@ -96,6 +100,15 @@ async def get_transfer(query: UserQuery):
     try:
         response = transfer.convert_transfer_intent(query.question)
         return {"transaction_type": "transfer", "response": response}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/buy/")
+async def get_buy(query: UserQuery):
+    try:
+        response = buy.convert_buy_intent(query.question)
+        return {"transaction_type": "buy", "response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

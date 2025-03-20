@@ -25,25 +25,34 @@ from .utils import create_open_ai_client, load_schema
 # Load the JSON schemas for swap and simple transfer
 swap_schema = load_schema("schemas/swap.json")
 transfer_schema = load_schema("schemas/transfer.json")
+buy_schema = load_schema("schemas/buy.json")
 
 # Initialize OpenAI client
 client = create_open_ai_client()
+
 
 def classify_transaction(transaction_text):
     # System message explaining the task
     system_message = {
         "role": "system",
-        "content": "Determine if the following transaction text is for a token swap or a transfer. Use the appropriate schema to understand the transaction. Return '1' for transfer, '2' for swap, and '0' for neither. Do not output anything besides this number. If one number is classified for the output, make sure to omit the other two in your generated response."
+        "content": "Determine if the following transaction text is for a token swap, a transfer, or buying crypto with fiat. Use the appropriate schema to understand the transaction. Return '1' for transfer, '2' for swap, '3' for buying crypto with fiat, and '0' for none of these. Do not output anything besides this number. If one number is classified for the output, make sure to omit the other numbers in your generated response.",
     }
 
     # Messages to set up schema contexts
     swap_schema_message = {
         "role": "system",
-        "content": "[Swap Schema] Token Swap Schema:\n" + json.dumps(swap_schema, indent=2)
+        "content": "[Swap Schema] Token Swap Schema:\n"
+        + json.dumps(swap_schema, indent=2),
     }
     transfer_schema_message = {
         "role": "system",
-        "content": "[Transfer Schema] Simple Transfer/Send Schema:\n" + json.dumps(transfer_schema, indent=2)
+        "content": "[Transfer Schema] Simple Transfer/Send Schema:\n"
+        + json.dumps(transfer_schema, indent=2),
+    }
+    buy_schema_message = {
+        "role": "system",
+        "content": "[Buy Schema] Buy Crypto With Fiat Schema:\n"
+        + json.dumps(buy_schema, indent=2),
     }
 
     # User message with the transaction text
@@ -56,8 +65,9 @@ def classify_transaction(transaction_text):
             system_message,
             swap_schema_message,
             transfer_schema_message,
+            buy_schema_message,
             user_message,
-        ]
+        ],
     )
 
     # Extracting and interpreting the last message from the completion
@@ -65,10 +75,11 @@ def classify_transaction(transaction_text):
     print("classification: ", response)
     return get_valid_response(response)
 
+
 def get_valid_response(response):
-    valid_responses = ["0", "1", "2"]
+    valid_responses = ["0", "1", "2", "3"]
     found = None
-    
+
     for valid in valid_responses:
         # Count the occurrences of each valid response in the string
         if response.count(valid) == 1:
@@ -76,5 +87,5 @@ def get_valid_response(response):
                 # If another valid response was already found, return 0
                 return 0
             found = int(valid)  # Store the found valid response
-    
+
     return found if found is not None else 0
