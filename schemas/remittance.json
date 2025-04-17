@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RemittanceTransaction",
+  "description": "Schema for cross-border remittance transactions (USD to EUR via USDC and EURC) on Sepolia testnet",
+  "type": "object",
+  "properties": {
+    "source_currency": {
+      "type": "string",
+      "description": "Source fiat currency (USD)",
+      "enum": ["USD"]
+    },
+    "target_currency": {
+      "type": "string",
+      "description": "Target fiat currency (EUR)",
+      "enum": ["EUR"]
+    },
+    "amount": {
+      "type": "number",
+      "description": "Amount of source currency to convert",
+      "minimum": 0
+    },
+    "recipient_address": {
+      "type": "string",
+      "description": "Recipient's wallet or bank account address for the EUR"
+    },
+    "recipient_name": {
+      "type": "string",
+      "description": "Name of the recipient (optional)"
+    },
+    "chain": {
+      "type": "string",
+      "description": "Blockchain network to use (currently only Sepolia testnet is supported)",
+      "default": "sepolia",
+      "enum": ["sepolia"]
+    }
+  },
+  "required": ["source_currency", "target_currency", "amount", "recipient_address"]
+} 

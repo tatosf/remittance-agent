@@ -2,3 +2,7 @@ fastapi==0.111.0
 openai==1.31.0
 pydantic==2.7.3
 python_dateutil==2.9.0.post0
+python-dotenv==1.0.1
+eth-typing==3.0.0
+web3==5.31.1
+eth-account==0.5.9

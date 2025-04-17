@@ -24,7 +24,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import BaseModel
 import json
-from llm import swap, handler, transfer, buy
+from llm import swap, handler, transfer, buy, remittance
 
 app = FastAPI()
 app.add_middleware(
@@ -42,11 +42,13 @@ Prompt
 
 class UserQuery(BaseModel):
     question: str
+    use_test_tokens: bool = False  # Default to false
 
 
 @app.post("/answer/")
 async def get_answer(query: UserQuery):
     print("DEBUG: Entered get_answer with query:", query.question)
+    print("DEBUG: Use test tokens:", query.use_test_tokens)
     try:
         classification = handler.classify_transaction(query.question)
         print("DEBUG: Classification result:", classification)
@@ -72,6 +74,12 @@ async def get_answer(query: UserQuery):
             print("DEBUG: Detected buy intent.")
             response = buy.convert_buy_intent(query.question)
             query_type = "buy"
+        elif classification == 4:
+            print("DEBUG: Detected remittance intent.")
+            response = remittance.process_remittance_intent(
+                query.question, query.use_test_tokens
+            )
+            query_type = "remittance"
         else:
             print("DEBUG: Unexpected classification value:", classification)
             raise HTTPException(
@@ -90,7 +98,7 @@ async def get_answer(query: UserQuery):
 async def get_swap(query: UserQuery):
     try:
         response = swap.convert_transaction(query.question)
-        return {"transaction_type": "swap", response: response}
+        return {"transaction_type": "swap", "response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -109,6 +117,17 @@ async def get_buy(query: UserQuery):
     try:
         response = buy.convert_buy_intent(query.question)
         return {"transaction_type": "buy", "response": response}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/remittance/")
+async def get_remittance(query: UserQuery):
+    try:
+        response = remittance.process_remittance_intent(
+            query.question, query.use_test_tokens
+        )
+        return {"transaction_type": "remittance", "response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
