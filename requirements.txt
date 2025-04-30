@@ -6,3 +6,7 @@ python-dotenv==1.0.1
 eth-typing==3.0.0
 web3==5.31.1
 eth-account==0.5.9
+pandas==2.1.4
+matplotlib==3.8.3
+tqdm==4.66.2
+requests==2.31.0

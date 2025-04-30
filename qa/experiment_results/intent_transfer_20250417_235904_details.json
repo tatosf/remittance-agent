@@ -1,0 +1,482 @@
+[
+  {
+    "prompt": "transfer 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 3.891044855117798
+  },
+  {
+    "prompt": "please transfer 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 2.131866931915283
+  },
+  {
+    "prompt": "I want to transfer 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 2.1836369037628174
+  },
+  {
+    "prompt": "Can you transfer 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia?",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.8057489395141602
+  },
+  {
+    "prompt": "I'd like to send 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia please",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 5.533025026321411
+  },
+  {
+    "prompt": "to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia, send 0.5 USDC",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.634742021560669
+  },
+  {
+    "prompt": "0.5 USDC \u2192 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E (sepolia)",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.8435609340667725
+  },
+  {
+    "prompt": "could you kindly help me send some USDC, specifically 0.5 tokens, to the wallet address 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on the sepolia network?",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 2.14894700050354
+  },
+  {
+    "prompt": "sepolia: sendToken(USDC, 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E, 0.5)",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.667696237564087
+  },
+  {
+    "prompt": "Pay 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E 0.5 USDC on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0xAFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": false,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": false
+    },
+    "response_time": 1.608093023300171
+  },
+  {
+    "prompt": "transfer half a USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 2.671586036682129
+  },
+  {
+    "prompt": "transfer 0.25 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.25,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.25,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.8345768451690674
+  },
+  {
+    "prompt": "transfer USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": null,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 100,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.5501668453216553
+  },
+  {
+    "prompt": "transfer 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": null,
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "amount": 0.5,
+        "chain": "mainnet",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": false,
+    "param_matches": {
+      "transaction_type": true,
+      "token": false,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 2.0320239067077637
+  },
+  {
+    "prompt": "Perform a transfer for a small amount of USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": null,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 10,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 1.6548168659210205
+  },
+  {
+    "prompt": "Send approximately 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E on sepolia",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": "sepolia",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "token": true,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 2.554494857788086
+  }
+]

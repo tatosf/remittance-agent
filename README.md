@@ -1,8 +1,4 @@
-# TXT2TXN Backend
-
-This repo serves as the backend for the TXT2TXN project.
-
-TXT2TXN is a collaboration between Circle and Blockchain at Berkeley, in particular [Niall Mandal](https://github.com/niallmandal).
+# Remittance agent back end
 
 ## Setup
 

@@ -1,0 +1,4 @@
+experiment,total_tests,correct_tests,accuracy,avg_response_time
+swap,16,15,0.9375,2.8039795607328415
+transfer,16,14,0.875,2.296626701951027
+remittance,16,16,1.0,3.095114767551422

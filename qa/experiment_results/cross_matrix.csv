@@ -1,0 +1,17 @@
+,swap,transfer,remittance
+direct,1.0,1.0,1.0
+polite,1.0,1.0,1.0
+conversational,1.0,1.0,1.0
+question,1.0,1.0,1.0
+synonyms,1.0,1.0,1.0
+reordered,1.0,1.0,1.0
+symbols,1.0,1.0,1.0
+verbose,1.0,1.0,1.0
+technical,1.0,1.0,1.0
+implicit,1.0,1.0,1.0
+spelled_number,1.0,1.0,1.0
+decimal_number,1.0,1.0,1.0
+missing_amount,1.0,1.0,1.0
+missing_chain,1.0,0.0,1.0
+ambiguous_amount,1.0,1.0,1.0
+approximate_amount,0.0,0.0,

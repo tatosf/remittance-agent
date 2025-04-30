@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-04-17T23:56:55.993055",
+  "total_tests": 3,
+  "correct_tests": 3,
+  "accuracy": 1.0,
+  "failed_requests": 0,
+  "avg_response_time": 3.47366730372111,
+  "intent_type_accuracy": {
+    "swap": 1.0,
+    "transfer": 1.0,
+    "remittance": 1.0
+  },
+  "parameter_accuracy": {
+    "token": 1.0,
+    "amount": 1.0,
+    "chain": 1.0,
+    "recipientAddress": 1.0
+  },
+  "error_analysis": {}
+}

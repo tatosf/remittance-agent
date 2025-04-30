@@ -25,7 +25,6 @@ from .utils import create_open_ai_client, load_schema
 # Load the JSON schemas for swap and simple transfer
 swap_schema = load_schema("schemas/swap.json")
 transfer_schema = load_schema("schemas/transfer.json")
-buy_schema = load_schema("schemas/buy.json")
 remittance_schema = load_schema("schemas/remittance.json")
 
 # Initialize OpenAI client
@@ -36,7 +35,7 @@ def classify_transaction(transaction_text):
     # System message explaining the task
     system_message = {
         "role": "system",
-        "content": "Determine if the following transaction text is for a token swap, a transfer, buying crypto with fiat, or a cross-border remittance (USD to EUR). Use the appropriate schema to understand the transaction. Return '1' for transfer, '2' for swap, '3' for buying crypto with fiat, '4' for remittance, and '0' for none of these. Do not output anything besides this number. If one number is classified for the output, make sure to omit the other numbers in your generated response.",
+        "content": "Determine if the following transaction text is for a token swap, a transfer, or a cross-border remittance (USD to EUR). Use the appropriate schema to understand the transaction. Return '1' for transfer, '2' for swap, '3' for buying crypto with fiat, '4' for remittance, and '0' for none of these. Do not output anything besides this number. If one number is classified for the output, make sure to omit the other numbers in your generated response.",
     }
 
     # Messages to set up schema contexts
@@ -49,11 +48,6 @@ def classify_transaction(transaction_text):
         "role": "system",
         "content": "[Transfer Schema] Simple Transfer/Send Schema:\n"
         + json.dumps(transfer_schema, indent=2),
-    }
-    buy_schema_message = {
-        "role": "system",
-        "content": "[Buy Schema] Buy Crypto With Fiat Schema:\n"
-        + json.dumps(buy_schema, indent=2),
     }
     remittance_schema_message = {
         "role": "system",
@@ -93,7 +87,6 @@ def classify_transaction(transaction_text):
             system_message,
             swap_schema_message,
             transfer_schema_message,
-            buy_schema_message,
             remittance_schema_message,
             examples_message,
             user_message,
@@ -136,7 +129,6 @@ def process_transaction(transaction_text, use_test_tokens=False):
     from .remittance import process_remittance_intent
     from .transfer import process_transfer_intent
     from .swap import process_swap_intent
-    from .buy import process_buy_intent
 
     # Classify the transaction
     transaction_type = classify_transaction(transaction_text)
@@ -155,7 +147,7 @@ def process_transaction(transaction_text, use_test_tokens=False):
     elif transaction_type == 3:  # Buy
         return {
             "transaction_type": "buy",
-            "response": process_buy_intent(transaction_text),
+            "response": {"error": "Buy functionality has been removed"},
         }
     elif transaction_type == 4:  # Remittance
         return {

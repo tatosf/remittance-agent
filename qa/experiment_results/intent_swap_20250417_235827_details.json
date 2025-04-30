@@ -1,0 +1,472 @@
+[
+  {
+    "prompt": "swap 0.5 USDC for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 2.2075703144073486
+  },
+  {
+    "prompt": "please swap 0.5 USDC for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 2.3551299571990967
+  },
+  {
+    "prompt": "I want to swap 0.5 USDC for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 1.6114299297332764
+  },
+  {
+    "prompt": "Can you swap 0.5 USDC for EURC on sepolia?",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 5.416143178939819
+  },
+  {
+    "prompt": "I'd like to switch 0.5 USDC for EURC on sepolia network please",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 1.360562801361084
+  },
+  {
+    "prompt": "exchange my USDC for EURC on sepolia, specifically 0.5 USDC",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 5.07086706161499
+  },
+  {
+    "prompt": "USDC \u2192 EURC, 0.5 token, sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 1.564405918121338
+  },
+  {
+    "prompt": "can you please help me swap 0.5 USDC to get some EURC on the sepolia network?",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 2.9773218631744385
+  },
+  {
+    "prompt": "sepolia: swap(USDC, EURC, 0.5)",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 1.4348320960998535
+  },
+  {
+    "prompt": "Need EURC instead of my USDC on sepolia - just 0.5 token",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 2.918397903442383
+  },
+  {
+    "prompt": "swap half a USDC for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 4.381976127624512
+  },
+  {
+    "prompt": "swap 0.55 USDC for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.55,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.55,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 1.5290029048919678
+  },
+  {
+    "prompt": "I want to swap some USDC for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": null,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 1000,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 6.752100706100464
+  },
+  {
+    "prompt": "swap 0.5 USDC for EURC",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": null
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 3.247997283935547
+  },
+  {
+    "prompt": "Give me all the USDC you have for EURC on sepolia",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": null,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 2.0359349250793457
+  },
+  {
+    "prompt": "Can you help me convert about 0.5 USDC to EURC on sepolia?",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "error": "All requests failed"
+    },
+    "is_correct": false,
+    "param_matches": {
+      "transaction_type": false
+    },
+    "response_time": 0
+  }
+]

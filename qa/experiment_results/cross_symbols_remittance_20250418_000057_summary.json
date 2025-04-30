@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-04-18T00:00:57.298159",
+  "total_tests": 1,
+  "correct_tests": 1,
+  "accuracy": 1.0,
+  "failed_requests": 0,
+  "avg_response_time": 5.2235658168792725,
+  "intent_type_accuracy": {
+    "remittance": 1.0
+  },
+  "parameter_accuracy": {},
+  "error_analysis": {}
+}

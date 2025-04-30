@@ -1,0 +1,22 @@
+[
+  {
+    "prompt": "Can you help me convert about 0.5 USDC to EURC on sepolia?",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "error": "All requests failed"
+    },
+    "is_correct": false,
+    "param_matches": {
+      "transaction_type": false
+    },
+    "response_time": 0
+  }
+]

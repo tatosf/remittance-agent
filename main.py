@@ -24,7 +24,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import BaseModel
 import json
-from llm import swap, handler, transfer, buy, remittance
+from llm import swap, handler, transfer, remittance
 
 app = FastAPI()
 app.add_middleware(
@@ -72,8 +72,9 @@ async def get_answer(query: UserQuery):
             query_type = "swap"
         elif classification == 3:
             print("DEBUG: Detected buy intent.")
-            response = buy.convert_buy_intent(query.question)
-            query_type = "buy"
+            raise HTTPException(
+                status_code=500, detail="Buy functionality has been removed"
+            )
         elif classification == 4:
             print("DEBUG: Detected remittance intent.")
             response = remittance.process_remittance_intent(
@@ -108,15 +109,6 @@ async def get_transfer(query: UserQuery):
     try:
         response = transfer.convert_transfer_intent(query.question)
         return {"transaction_type": "transfer", "response": response}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/buy/")
-async def get_buy(query: UserQuery):
-    try:
-        response = buy.convert_buy_intent(query.question)
-        return {"transaction_type": "buy", "response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

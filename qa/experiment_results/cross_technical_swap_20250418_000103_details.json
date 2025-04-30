@@ -1,0 +1,32 @@
+[
+  {
+    "prompt": "sepolia: swap(USDC, EURC, 0.5)",
+    "expected_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "swap",
+      "response": {
+        "fromAsset": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "toAsset": "0x08210F9170F89Ab7658F0B5E3fF39b0E03C594D4",
+        "amount": 0.5,
+        "chain": "sepolia"
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "fromAsset": true,
+      "toAsset": true,
+      "amount": true,
+      "chain": true
+    },
+    "response_time": 1.3070359230041504
+  }
+]

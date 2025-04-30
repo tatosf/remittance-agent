@@ -1,0 +1,1986 @@
+[
+  {
+    "prompt": "remit 5 USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0x0ace4a6db318adecda36804b800be09a49277e2cd8ca5e4c035472be5d0cb181",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 2.455997943878174
+  },
+  {
+    "prompt": "please remit 5 USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xdb04783e155f24c6448c9fd8fc29552b44096bb6a251bff4875dbafd5f3af4ca",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 3.865900993347168
+  },
+  {
+    "prompt": "I want to remit 5 USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xbbe05425c7a0e0f7f5f0028d4d5c04ca5e9b06afe7216ca395b7a5cd142341d6",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 2.495698928833008
+  },
+  {
+    "prompt": "Can you remit 5 USD to EUR for my friend in Europe on sepolia?",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "recipient_name": "friend in Europe",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "friend in Europe",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xc51073ca38ac2954a1ecd7b4ac82decd05f35e369151f29857bf37fb73054b84",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 5.372526168823242
+  },
+  {
+    "prompt": "I'd like to send a cross-border payment of 5 USD to EUR for my friend in Europe on sepolia please",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0x09dbde49248f93f193f38b5ba5219900bdc2580b230670990f2ae65f23e97baa",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 4.3433451652526855
+  },
+  {
+    "prompt": "for my friend in Europe on sepolia, convert 5 USD to EUR",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0x7205e1a4579a27a3f90e8f6b7a332c01bf6a38818e781dbc7bd4af5a00df36bf",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 3.7518937587738037
+  },
+  {
+    "prompt": "$5 \u2192 \u20acXX, sepolia, to Europe",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0x821e1d6b3d8fe0486637628547540cd241bef20bbb2fde3eabf03e7e892bde89",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 2.9725892543792725
+  },
+  {
+    "prompt": "I need to help my friend in Europe by sending them some money, around 5 dollars converted to euros, can you process this international payment on the sepolia blockchain?",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xf5a88ee6f131b193b3283955c5ac8749ac322b32cd325b769603c45d3dfc137e",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 2.1087098121643066
+  },
+  {
+    "prompt": "sepolia: remit(USD, EUR, 5, europe)",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_name": "europe",
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "europe",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0x88ac6a56eee7c9e6faf5796de5e5782a844b6b3d6773f7cc5bb9af865ece1c13",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 1.8858351707458496
+  },
+  {
+    "prompt": "Help my friend in Europe with 5 dollars on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xab96ab2a4b2bbe6ac0fb107d7675fb51d7146cc25054e7f8506579579605d106",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 1.1431806087493896
+  },
+  {
+    "prompt": "remit five USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xab8b485d0dd972c15108bdc3e23d3ce5bba0f414a6c8268e7c0fa9c941d79e1b",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 4.898793935775757
+  },
+  {
+    "prompt": "remit 5.50 USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5.5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5.5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d68000000000000000000000000000000000000000000000000000000000053ec60",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e36000000000000000000000000000000000000000000000000000000000053ec60",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5.5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf000000000000000000000000000000000000000000000000000000000053ec600000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5.5,
+          "estimated_eur_amount": 4.95,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.5,
+          "usdc_amount": 5.472636815920398,
+          "eurc_amount": 5.034825870646767,
+          "eur_amount": 4.984976109551254,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.0275,
+            "total_cost_usd": 45.0275
+          },
+          "transaction_hash": "0xedb2214c9fcb4d48458b721a1f5b2d31f60dd39d7fab5451b4507b590136151a",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 1.6406049728393555
+  },
+  {
+    "prompt": "remit USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": null,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 0,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d680000000000000000000000000000000000000000000000000000000000000000",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e360000000000000000000000000000000000000000000000000000000000000000",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 0 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 0,
+          "estimated_eur_amount": 0.0,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 0.0,
+          "usdc_amount": 0.0,
+          "eurc_amount": 0.0,
+          "eur_amount": 0.0,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.0,
+            "total_cost_usd": 45.0
+          },
+          "transaction_hash": "0x41e08da365005a1ce964e59624c791354dac02b60f56b04847f9a25ede4456ce",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 2.440951108932495
+  },
+  {
+    "prompt": "remit 5 USD to EUR for my friend in Europe",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": null,
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "recipient_name": "friend in Europe",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "friend in Europe",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0x2be88cb1e267ed49301ed0e4c7d19d7084a886716841f14dde4ecfdb00f9f559",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "recipient_address": true
+    },
+    "response_time": 2.573198080062866
+  },
+  {
+    "prompt": "Send some dollars to my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": null,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 0,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d680000000000000000000000000000000000000000000000000000000000000000",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e360000000000000000000000000000000000000000000000000000000000000000",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 0 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 0,
+          "estimated_eur_amount": 0.0,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 0.0,
+          "usdc_amount": 0.0,
+          "eurc_amount": 0.0,
+          "eur_amount": 0.0,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.0,
+            "total_cost_usd": 45.0
+          },
+          "transaction_hash": "0x073bed827f78f1bc32307c085771ccf7aa0cf31bf9ef43619646e3a02029dfbb",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 6.343398332595825
+  },
+  {
+    "prompt": "Remit about 5 USD to EUR for my friend in Europe on sepolia",
+    "expected_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "amount": 5,
+        "chain": "sepolia",
+        "recipient_address": "0x0000000000000000000000000000000000000000"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "remittance",
+      "response": {
+        "source_currency": "USD",
+        "target_currency": "EUR",
+        "amount": 5,
+        "recipient_address": "default",
+        "chain": "sepolia",
+        "using_test_tokens": true,
+        "transaction_flow": {
+          "step1": {
+            "name": "Get tUSDC Tokens",
+            "description": "Get test USD tokens directly to your wallet",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xa0712d6800000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 200000,
+              "gasPrice": 55000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step will mint test USD tokens directly to your wallet. These tokens represent USD for testing purposes."
+          },
+          "step2": {
+            "name": "tUSDC Approval",
+            "description": "Approve the TestRemittanceBridge contract to spend your tUSDC",
+            "tx_data": {
+              "to": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0x095ea7b3000000000000000000000000522bdf8af3415aa281e25481a1d402869e161e3600000000000000000000000000000000000000000000000000000000004c4b40",
+              "value": 0,
+              "gasLimit": 100000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This step approves the TestRemittanceBridge contract to spend your tUSDC tokens on your behalf."
+          },
+          "step3": {
+            "name": "USD to EUR Conversion",
+            "description": "Convert 5 tUSDC to tEURC via TestRemittanceBridge",
+            "tx_data": {
+              "to": "0x522BdF8af3415aa281e25481A1D402869E161e36",
+              "from": "0x0000000000000000000000000000000000000000",
+              "data": "0xff6dc6cf00000000000000000000000000000000000000000000000000000000004c4b400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000001d53616e746961676f20746573742031737420747261736e616374696f6e000000",
+              "value": 0,
+              "gasLimit": 300000,
+              "gasPrice": 50000000000,
+              "chainId": 11155111
+            },
+            "requires_signature": true,
+            "status": "waiting_for_signature",
+            "explain": "This transaction converts your tUSDC to tEURC at the current exchange rate, simulating an international remittance."
+          },
+          "step4": {
+            "name": "Check tEURC Balance",
+            "description": "Check your tEURC balance after remittance",
+            "check_balance": {
+              "token_address": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b"
+            },
+            "requires_signature": false,
+            "status": "waiting_for_execution",
+            "explain": "This step checks your tEURC balance after the remittance is complete."
+          }
+        },
+        "status_summary": {
+          "total_steps": 4,
+          "current_step": 1,
+          "completed_steps": 0,
+          "usd_amount": 5,
+          "estimated_eur_amount": 4.5,
+          "recipient": "0x0000000000000000000000000000000000000000",
+          "network": "Sepolia Testnet",
+          "using_test_tokens": true
+        },
+        "cost_simulation": {
+          "usd_amount": 5.0,
+          "usdc_amount": 4.975124378109453,
+          "eurc_amount": 4.577114427860697,
+          "eur_amount": 4.531796463228413,
+          "exchange_rates": {
+            "usd_to_usdc": 1.005,
+            "usdc_to_eurc": 0.92,
+            "eurc_to_eur": 1.01
+          },
+          "fees": {
+            "network_fee_usd": 45.0,
+            "service_fee_usd": 0.025,
+            "total_cost_usd": 45.025
+          },
+          "transaction_hash": "0xbddb27855b6f435f5e56441dcd919a350dac757247fa17c11e61213652f42650",
+          "requires_signature": false,
+          "chain": "sepolia"
+        },
+        "token_addresses": {
+          "tUSD": "0xF038E27507405954a1B59D37b936f0226C6034AC",
+          "tEUR": "0x6F2f88340B027Cc6b8a551912A30e957aC59cb8b",
+          "bridge": "0x522BdF8af3415aa281e25481A1D402869E161e36"
+        }
+      }
+    },
+    "is_correct": true,
+    "param_matches": {
+      "transaction_type": true,
+      "amount": true,
+      "chain": true,
+      "recipient_address": true
+    },
+    "response_time": 1.2292120456695557
+  }
+]

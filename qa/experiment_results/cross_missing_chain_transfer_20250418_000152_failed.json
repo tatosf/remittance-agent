@@ -1,0 +1,32 @@
+[
+  {
+    "prompt": "transfer 0.5 USDC to 0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E",
+    "expected_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        "amount": 0.5,
+        "chain": null,
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "actual_intent": {
+      "transaction_type": "transfer",
+      "response": {
+        "token": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "amount": 0.5,
+        "chain": "mainnet",
+        "recipientAddress": "0x0AFD7486Ab71E9a52caA910606e7Fc9F250F786E"
+      }
+    },
+    "is_correct": false,
+    "param_matches": {
+      "transaction_type": true,
+      "token": false,
+      "amount": true,
+      "chain": true,
+      "recipientAddress": true
+    },
+    "response_time": 7.270322322845459
+  }
+]
